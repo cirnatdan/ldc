@@ -768,7 +768,7 @@ PortInitializer::PortInitializer()
 
 int Port::isNan(double r)
 {
-#if __HAIKU__ || __FreeBSD__ || __OpenBSD__ || __NetBSD__
+#if __HAIKU__ || __FreeBSD__ || __OpenBSD__
     return isnan(r);
 #elif __DragonFly__
     return __isnan(r);
@@ -780,7 +780,7 @@ int Port::isNan(double r)
 
 int Port::isNan(longdouble r)
 {
-#if __HAIKU__ || __FreeBSD__ || __OpenBSD__ || __NetBSD__
+#if __HAIKU__ || __FreeBSD__ || __OpenBSD__
     return isnan(r);
 #elif __DragonFly__
     return __isnanl(r);
@@ -810,7 +810,7 @@ int Port::isInfinity(double r)
 {
 #if __APPLE__
     return fpclassify(r) == FP_INFINITE;
-#elif __HAIKU__ || __FreeBSD__ || __OpenBSD__ || __NetBSD__
+#elif __HAIKU__ || __FreeBSD__ || __OpenBSD__
     return isinf(r);
 #elif __DragonFly__
     return __isinf(r);
